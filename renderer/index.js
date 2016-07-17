@@ -1,12 +1,26 @@
 import React from 'react'
 import { render } from 'react-dom'
 
-const Application = () => {
-  return (
-    <div>
-      <h1>Hello World</h1>
-    </div>
-  )
+import brace from 'brace'
+import AceEditor from 'react-ace'
+
+import 'brace/mode/javascript'
+import 'brace/theme/tomorrow'
+
+function onChange (newValue) {
+  console.log('change', newValue)
 }
 
-render(<Application/>, document.getElementById('application'))
+// Render editor
+render(
+  <AceEditor
+    mode="javascript"
+    theme="tomorrow"
+    onChange={onChange}
+    name="editor"
+    tabSize={2}
+    fontSize={14}
+    editorProps={{$blockScrolling: true}}
+  />,
+  document.getElementById('application')
+)

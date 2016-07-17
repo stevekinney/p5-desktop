@@ -1,4 +1,17 @@
+* {
+  box-sizing: border-box;
+}
+
+*::after, *::before {
+  box-sizing: inherit;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+}
+
 #editor {
-  min-height: 400px;
-  min-width: 600px;
+  min-height: 100vh;
+  min-width: 100vw;
 }
